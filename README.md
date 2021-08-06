@@ -1,4 +1,25 @@
-# Signer
+# Signer for Developers
+
+_Same as the original Signer extension except I removed a hardcoded "30sec AUTO-LOCK" feature that is counter-productive for development purposes. Enjoy!_
+
+> _For your safety, you can easily audit the code changes, there is only one commit that changed README and `AuthController.ts` file._
+
+---
+
+## Goals
+
+- keep the "auto-lock" feature disabled
+- keep it up-to-date by rebasing the fork
+- maybe add some extras for developers in the future
+
+---
+
+## Build extension
+
+Just run `npm i && npm run complete` command and grab your Signer extension from the `/artifacts` folder.
+
+---
+
 Browser plugin used to sign transactions for CasperLabs.
 
 ## Architecture 

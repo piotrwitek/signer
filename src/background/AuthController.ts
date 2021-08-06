@@ -77,6 +77,8 @@ class AuthController {
         clearTimeout(this.timer);
       }
       port.onDisconnect.addListener(() => {
+        // This return will never allow timer to start
+        return;
         this.timer = setTimeout(() => {
           if (this.isUnlocked) this.lock();
         }, 1000 * 60);
@@ -551,6 +553,8 @@ class AuthController {
 
   @action
   refreshRemainingTime(minutesLeft: number) {
+    // This return will never allow timer to start
+    return;
     if (minutesLeft <= 1) {
       this.appState.remainingMins = 1;
       return;
@@ -566,6 +570,9 @@ class AuthController {
     timeInMinutes: number,
     resetTimestamp: boolean = true
   ) {
+    // This return will never allow timer to start
+    return;
+
     this.appState.lockoutTimerStarted = true;
     if (resetTimestamp) {
       let currentTimeMillis = new Date().getTime();
